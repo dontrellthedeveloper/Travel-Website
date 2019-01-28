@@ -46,4 +46,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
   @if $breakpoint == big-desktop {
     @media(min-width: 112.5em) {@content}; //1800px
   }
+  @if $breakpoint == popup {
+    @media (max-width: 100em) {@content};
+  }
+  @if $breakpoint == mobile {
+    @media (max-width: 37.5em) {@content};
+  }
 }

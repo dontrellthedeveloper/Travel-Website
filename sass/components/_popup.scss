@@ -13,20 +13,34 @@
 
   &__content {
     @include absCenter;
-    width: 75%;
-    background-color: $color-white;
-    box-shadow: 0 2rem 4rem rgba($color-black, .2);
-    border-radius: 3px;
     display: table;
+    background-color: $color-white;
+    width: 75%;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: .3rem;
     overflow: hidden;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(.25);
-    transition: all .4s .2s;
+    transform: translate(-50%,-50%) scale(.25);
+    transition: all .5s .2s;
+    position: relative;
+
+    @include respond(mobile) {
+      text-align: center; //ADD THIS
+    }
   }
 
   &__left {
     width: 33.333333%;
     display: table-cell;
+
+    @include respond(popup) {
+      display: table-caption; //ADD THIS
+      width: 100%; //ADD THIS
+    }
+
+    @include respond(mobile) {
+      display: none; //ADD THIS
+    }
   }
 
   &__right {
@@ -39,6 +53,17 @@
   &__img {
     display: block;
     width: 100%;
+
+    @include respond(popup) {
+      width: 50%; //ADD THIS
+      height: 30rem; //ADD THIS
+      float: left; //ADD THIS
+      object-fit: cover; //ADD THIS
+    }
+
+    @include respond(mobile) {
+      display: none; //ADD THIS
+    }
   }
 
   &__text {
